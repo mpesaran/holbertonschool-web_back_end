@@ -5,7 +5,6 @@ export default class Building {
       Building.evacuationWarningMessage();
     }
 
-    // Validate sqft
     if (typeof sqft !== 'number') {
       throw new Error('sqft must be a number');
     }
@@ -16,7 +15,13 @@ export default class Building {
     return this._sqft;
   }
 
-  // Abstract method placeholder
+  set sqft(value) {
+    if (typeof value !== 'number') {
+      throw new Error('sqft must be a number');
+    }
+    this._sqft = value;
+  }
+
   static evacuationWarningMessage() {
     throw new Error('Class extending Building must override evacuationWarningMessage');
   }
