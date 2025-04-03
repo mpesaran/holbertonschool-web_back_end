@@ -1,8 +1,22 @@
 export default class Building {
   constructor(sqft) {
-    if (this.constructor === Building) {
+    // Prevent direct instantiation
+    if (new.target === Building) {
       throw new Error("Class is of abstract type and cannot be instantiated");
     }
+
+    // Validate implementation of evacuationWarningMessage
+    const proto = Object.getPrototypeOf(this);
+    const superProto = Building.prototype;
+    const missing = Object.getOwnPropertyNames(superProto).find(
+      (name) => typeof superProto[name] === "function" && !proto.hasOwnProperty(name)
+    );
+
+    if (missing) {
+      throw new TypeError(`${this.constructor.name} needs to implement ${missing}`);
+    }
+
+    // Validate sqft
     if (typeof sqft !== 'number') {
       throw new Error('sqft must be a number');
     }
@@ -14,9 +28,6 @@ export default class Building {
   }
 
   evacuationWarningMessage() {
-    // Ensure subclasses implement this method
-    if (this.constructor === Building) {
-      throw new Error("Class extending Building must override evacuationWarningMessage");
-    }
+    throw new Error("Class extending Building must override evacuationWarningMessage");
   }
 }
