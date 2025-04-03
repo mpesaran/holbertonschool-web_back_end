@@ -15,6 +15,8 @@ export default class Building {
 
   evacuationWarningMessage() {
     // Ensure subclasses implement this method
-    throw new Error("Class extending Building must override evacuationWarningMessage");
+    if (this.constructor === Building) {
+      throw new Error("Class extending Building must override evacuationWarningMessage");
+    }
   }
 }
