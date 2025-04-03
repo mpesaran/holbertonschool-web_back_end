@@ -7,6 +7,9 @@ export default class Building {
       throw new Error('sqft must be a number');
     }
     this._sqft = sqft;
+    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+      throw new Error("Class extending Building must override evacuationWarningMessage");
+    }
   }
 
   get sqft() {
