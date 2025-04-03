@@ -1,6 +1,6 @@
 export default class Building {
   constructor(sqft) {
-    if (this.constructor === Building
+    if (this.constructor !== Building
       && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
       Building.evacuationWarningMessage();
     }
