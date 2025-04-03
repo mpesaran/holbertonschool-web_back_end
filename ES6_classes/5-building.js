@@ -1,7 +1,7 @@
 export default class Building {
   constructor(sqft) {
     // Prevent direct instantiation
-    if (new.target === Building) {
+    if (this.constructor === Building) {
       throw new Error("Class is of abstract type and cannot be instantiated");
     }
 
