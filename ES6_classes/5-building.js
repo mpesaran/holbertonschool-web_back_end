@@ -22,7 +22,6 @@ export default class Building {
   }
 
   // Abstract method placeholder
-  evacuationWarningMessage() {
-    throw new Error("Class extending Building must override evacuationWarningMessage");
-  }
+  evacuationWarningMessage() {}
+   
 }
