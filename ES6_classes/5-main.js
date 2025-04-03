@@ -1,13 +1,20 @@
-import Building from './5-building.js';
+import Building from './5-building';
 
-const b = new Building(100);
-console.log(b);
-
-class TestBuilding extends Building {}
+class TestBuilding extends Building {
+  evacuationWarningMessage() {
+    return "Evacuate immediately!";
+  }
+}
 
 try {
-    new TestBuilding(200)
+  new Building(200); // Should throw "Class is of abstract type and cannot be instantiated"
+} catch (error) {
+  console.log(error.message); // Expected output
 }
-catch(err) {
-    console.log(err);
+
+try {
+  const building = new TestBuilding(300); // Should not throw error
+  console.log(building.evacuationWarningMessage()); // Should print "Evacuate immediately!"
+} catch (error) {
+  console.log(error.message); // Unexpected
 }
