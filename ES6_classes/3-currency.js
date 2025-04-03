@@ -11,7 +11,7 @@ export default class Currency {
   }
 
   get code() {
-    return this.code;
+    return this._code;
   }
 
   set code(value) {
@@ -22,7 +22,7 @@ export default class Currency {
   }
 
   get name() {
-    return this.name;
+    return this._name;
   }
 
   set name(value) {
