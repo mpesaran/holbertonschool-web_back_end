@@ -1,6 +1,6 @@
 export default class Building {
   constructor(sqft) {
-    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+    if (this.evacuationWarningMessage === Building) {
       throw new Error("Class is of abstract type and can't be instantiated");
     }
     if (typeof sqft !== 'number') {
