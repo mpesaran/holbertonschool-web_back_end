@@ -1,13 +1,8 @@
 export default class Building {
   constructor(sqft) {
-    // Prevent direct instantiation
-    // if (this.constructor === Building) {
-    //   throw new Error("Class is of abstract type and cannot be instantiated");
-    // }
-
-    // Check for method implementation in subclass
-    if (this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
-      throw new Error("Class extending Building must override evacuationWarningMessage");
+    if (this.constructor === Building
+      && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+      Building.evacuationWarningMessage();
     }
 
     // Validate sqft
@@ -22,6 +17,7 @@ export default class Building {
   }
 
   // Abstract method placeholder
-  evacuationWarningMessage() {}
-   
+  static evacuationWarningMessage() {
+    throw new Error('Class extending Building must override evacuationWarningMessage');
+  }
 }
