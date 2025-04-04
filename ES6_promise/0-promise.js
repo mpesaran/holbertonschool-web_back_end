@@ -5,7 +5,7 @@ export default function getResponseFromAPI() {
       if (success) {
         resolve('Data fetched successfully');
       } else {
-        reject(new Error('Error fetching data'));
+        reject('Error fetching data');
       }
     }, 10);
   });
