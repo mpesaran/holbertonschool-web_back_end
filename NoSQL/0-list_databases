@@ -1,3 +1,2 @@
 // List all databases
-#!/usr/bin/env python3
 show dbs
