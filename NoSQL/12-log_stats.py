@@ -12,7 +12,7 @@ def log_stats():
 
     total_logs = collection.count_documents({})
 
-    methods = ['GET', 'POST', 'PATCH', 'DELETE']
+    methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
     method_counts = {}
     for method in methods:
         method_counts[method] = collection.count_documents({"method": method})
