@@ -4,4 +4,4 @@
 
 def to_str(n: float) -> str:
     """returns strin representation of a float number"""
-    return int(n)
+    return str(n)
