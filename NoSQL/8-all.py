@@ -1,4 +1,4 @@
-#!/usr/bin python3
+#!/usr/bin/env python3
 """Use Mongo in a python file"""
 
 
