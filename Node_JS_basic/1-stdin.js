@@ -4,7 +4,7 @@ process.stdin.setEncoding('utf-8');
 
 process.stdin.on('data', (input) => {
   const name = input.trim();
-  console.log(`Your name is: ${name}\r`);
+  console.log(`Your name is: ${name}\n`);
 
   // If input is piped, exit immediately
   if (!process.stdin.isTTY) {
